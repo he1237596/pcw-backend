@@ -6,7 +6,7 @@ module.exports = {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
         primaryKey: true,
-        comment: '主键ID'
+        comment: '主键ID',
       },
       username: {
         type: Sequelize.STRING(50),
@@ -44,12 +44,12 @@ module.exports = {
         type: Sequelize.DATE,
       },
     }, {
-      paranoid: true,  // 启用软删除
+      paranoid: true, // 启用软删除
       underscored: true, // 使用下划线命名法
     });
   },
 
-  down: async (queryInterface) => {
+  down: async queryInterface => {
     await queryInterface.dropTable('user');
   },
 };

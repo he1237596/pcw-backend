@@ -18,24 +18,24 @@ module.exports = {
   verifyToken(token) {
     try {
       const res = this.app.jwt.verify(token, this.app.config.jwt.secret);
-      console.log(res)
-      return res.sessionId
+      console.log(res);
+      return res.sessionId;
     } catch (error) {
-      console.log(error)
-      return null
+      console.log(error);
+      return null;
     }
   },
 
-  getToken (user = {}) {
+  getToken(user = {}) {
     // return this.jwt.sign({ sessionId: user._id }, this.app.config.secret, { expiresIn: '1d' })
   },
-  async expireToken(token){
+  async expireToken(token) {
     // const payload = jwt.verify(token, config.server.secretKey)
     // await redis.del(payload.sessionId)
     // console.log('expired sessionId:', payload)
   },
-  uuidv4(){
-    return uuid.v4()
+  uuidv4() {
+    return uuid.v4();
   },
   // success(data) {
   //   ctx.body = {
@@ -48,13 +48,13 @@ module.exports = {
     this.body = {
       code,
       msg: message,
-      data: result
-    }
+      data: result,
+    };
   },
   error(code = 500, message = 'error') {
     this.body = {
       code,
       msg: message,
-    }
-  }
-}
+    };
+  },
+};

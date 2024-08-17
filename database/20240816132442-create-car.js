@@ -51,12 +51,12 @@ module.exports = {
         type: Sequelize.DATE,
       },
     }, {
-      paranoid: true,  // 启用软删除
+      paranoid: true, // 启用软删除
       underscored: true, // 使用下划线命名法
     });
   },
 
-  down: async (queryInterface) => {
+  down: async queryInterface => {
     await queryInterface.dropTable('car');
   },
 };

@@ -24,19 +24,19 @@ module.exports = appInfo => {
   config.cors = {
     origin: '*', // 允许所有域访问，如果有特定的域名要求，修改为具体域名
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
-  }
+  };
   config.security = {
     csrf: {
       enable: false,
     },
-  }
+  };
   config.redis = {
     // 设置过期时间为2小时
     client: {
-      port: 6379,          // Redis 端口号
-      host: '127.0.0.1',   // Redis 服务器地址
+      port: 6379, // Redis 端口号
+      host: '127.0.0.1', // Redis 服务器地址
       password: '',
-      db: 0,               // Redis 数据库索引
+      db: 0, // Redis 数据库索引
     },
     // agent:true ？？？？
   };
@@ -53,27 +53,27 @@ module.exports = appInfo => {
 
   config.jwt = {
     secret: 'he1237596@163.com', // 可以自定义
-    sign: { //jwt.sign(***,***,[options,***])方法中，options的默认设置可以在这里配置；
+    sign: { // jwt.sign(***,***,[options,***])方法中，options的默认设置可以在这里配置；
       // 过期时间8小时
       //  invalid expiresIn option for number payload
       expiresIn: 2 * 60 * 60, //  生成token时，是否自动处理过期时间
-    }
-  }
+    },
+  };
   config.logger = {
-    //关闭所有打印到文件的日志
+    // 关闭所有打印到文件的日志
     // level: 'NONE',
-    //打印所有级别日志到终端,如需调整成ERROR级别
+    // 打印所有级别日志到终端,如需调整成ERROR级别
     // dir: path.join(appInfo.baseDir, 'logs'),
     // level: 'ERROR',
     // consoleLevel: 'ERROR',
     level: 'INFO',
     consoleLevel: 'INFO',
     disableConsoleAfterReady: false,
-  }
-  config.middleware = ['accessLog', 'errorHandler', 'auth' ,'loadUser'];
+  };
+  config.middleware = [ 'accessLog', 'errorHandler', 'auth', 'loadUser' ];
   config.auth = {
     enable: true,
-    ignore: ['/api/user/login', '/api/user/register'], // 登录路由无需 JWT 验证
+    ignore: [ '/api/user/login', '/api/user/register' ], // 登录路由无需 JWT 验证
   };
   config.mysql = {
     client: {
@@ -94,7 +94,7 @@ module.exports = appInfo => {
     app: true,
     // 是否加载到 agent 上，默认关闭
     agent: false,
-  }
+  };
   config.sequelize = {
     dialect: 'mysql',
     host: '127.0.0.1',
@@ -107,10 +107,10 @@ module.exports = appInfo => {
       updatedAt: 'updated_at',
       freezeTableName: true,
       underscored: false,
-    }
-  }
+    },
+  };
   return {
     ...config,
-    ...userConfig
+    ...userConfig,
   };
 };

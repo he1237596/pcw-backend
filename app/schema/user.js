@@ -12,7 +12,7 @@ module.exports = app => {
       type: UUID,
       defaultValue: UUIDV4,
       primaryKey: true,
-      comment: '主键ID'
+      comment: '主键ID',
     },
     username: {
       type: STRING(50),

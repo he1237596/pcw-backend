@@ -5,10 +5,13 @@
  * @LastEditTime: 2024-08-18 01:28:17
  * @Descripttion: **
  */
-module.exports = (app) => {
+module.exports = app => {
   // console.log(app.controller, app.model)
   // app.router.get('/user/list', app.controller.news.list);
-  const { controller: { user }, router } = app;
+  const {
+    controller: { user },
+    router,
+  } = app;
   const authMiddleware = app.middleware.auth();
   router.post('/user/register', user.register);
   router.post('/user/login', user.login);

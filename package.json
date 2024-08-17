@@ -16,6 +16,7 @@
     "egg-scripts": "2",
     "egg-sequelize": "^6.0.0",
     "egg-session-redis": "^2.1.0",
+    "eslint": "^8.57.0",
     "mysql2": "^3.11.0",
     "sequelize": "^6.37.3"
   },
@@ -23,6 +24,7 @@
     "egg-bin": "^6.10.0",
     "egg-mock": "5",
     "eslint-config-egg": "13",
+    "prettier": "^3.3.3",
     "sequelize-cli": "^6.6.2"
   },
   "engines": {
@@ -35,8 +37,9 @@
     "test": "npm run lint -- --fix && npm run test:local",
     "test:local": "egg-bin test",
     "cov": "egg-bin cov",
-    "lint": "eslint .",
-    "ci": "npm run lint && npm run cov"
+    "lint": "eslint . --fix",
+    "ci": "npm run lint && npm run cov",
+    "format": "prettier --write app/"
   },
   "repository": {
     "type": "git",
