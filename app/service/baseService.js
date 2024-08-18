@@ -2,12 +2,16 @@
  * @Author: Chris
  * @Date: 2024-08-16 21:18:40
  * @LastEditors: Chris
- * @LastEditTime: 2024-08-18 18:07:52
+ * @LastEditTime: 2024-08-18 19:17:51
  * @Descripttion: **
  */
-module.exports = class baseService {
-  constructor(model) {
-    this.model = model
+const Service = require('egg').Service
+
+module.exports = class BaseService extends Service {
+  constructor(modelName) {
+    super()
+    console.log(99999999999999)
+    // this.currentModel = this.ctx.models[modelName]
   }
   async list(ctx) {
     const query = ctx.state.query

@@ -3,6 +3,12 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('post');
     await queryInterface.createTable('post', {
+      id: {
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
+        primaryKey: true,
+        comment: '主键ID',
+      },
       fk_user_id: {
         type: Sequelize.UUID,
         allowNull: false,
@@ -40,6 +46,17 @@ module.exports = {
       status: {
         type: Sequelize.STRING(20),
         defaultValue: 'active',
+      },
+      created_at: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW,
+      },
+      updated_at: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW,
+      },
+      deleted_at: {
+        type: Sequelize.DATE,
       },
     });
   },

@@ -32,9 +32,6 @@ module.exports = {
       deleted_at: {
         type: Sequelize.DATE,
       },
-    }, {
-      paranoid: true,  // 启用软删除
-      underscored: true, // 使用下划线命名法
     });
   },
 

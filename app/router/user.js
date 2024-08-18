@@ -2,7 +2,7 @@
  * @Author: Chris
  * @Date: 2024-08-16 22:11:54
  * @LastEditors: Chris
- * @LastEditTime: 2024-08-18 01:28:17
+ * @LastEditTime: 2024-08-18 18:01:30
  * @Descripttion: **
  */
 module.exports = (app) => {
@@ -12,7 +12,7 @@ module.exports = (app) => {
     controller: { user },
     router
   } = app
-  const authMiddleware = app.middleware.auth()
+  // const authMiddleware = app.middleware.auth()
   router.post('/user/register', user.register)
   router.post('/user/login', user.login)
   router.post('/user/logout', user.logout)
