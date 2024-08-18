@@ -9,11 +9,11 @@
 
 module.exports = () => {
   return async function accessLog(ctx, next) {
-    const start = Date.now();
-    const { method, url } = ctx;
-    ctx.logger.info(`[origin]:${ctx.ip}}`);
-    await next();
-    const duration = Date.now() - start;
+    const start = Date.now()
+    const { method, url } = ctx
+    ctx.logger.info(`[origin]:${ctx.ip}}`)
+    await next()
+    const duration = Date.now() - start
 
     const log = {
       method: ctx.method,
@@ -22,13 +22,13 @@ module.exports = () => {
       duration,
       clientIP: ctx.ip,
       userAgent: ctx.get('User-Agent'),
-      time: new Date().toISOString(),
-    };
+      time: new Date().toISOString()
+    }
 
     // 输出到控制台
     // console.log(`[Access Log] ${JSON.stringify(log)}`);
 
     // 也可以选择使用内置的 logger 来记录日志
-    ctx.logger.info(`[origin]:${ctx.ip} [status]: ${ctx.status} ${duration}ms`);
-  };
-};
+    ctx.logger.info(`[origin]:${ctx.ip} [status]: ${ctx.status} ${duration}ms`)
+  }
+}
