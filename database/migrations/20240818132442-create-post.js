@@ -43,6 +43,10 @@ module.exports = {
       seat_count: {
         type: Sequelize.INTEGER,
       },
+      tel: {
+        type: STRING(20),
+        allowNull: false
+      },
       status: {
         type: Sequelize.STRING(20),
         defaultValue: 'active',
