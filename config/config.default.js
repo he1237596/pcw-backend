@@ -1,5 +1,5 @@
 /* eslint valid-jsdoc: "off" */
-
+const { DataTypes } = require('sequelize');
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
@@ -103,10 +103,17 @@ module.exports = appInfo => {
     password: '12345678',
     database: 'pinchewang',
     define: {
+      id: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+        default: DataTypes.UUIDV4,
+      },
       createdAt: 'created_at',
       updatedAt: 'updated_at',
+      deletedAt: 'deleted_at',
       freezeTableName: true,
       underscored: false,
+      paranoid: true,
     },
   };
   return {

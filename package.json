@@ -39,7 +39,8 @@
     "cov": "egg-bin cov",
     "lint": "eslint . --fix",
     "ci": "npm run lint && npm run cov",
-    "format": "prettier --write app/"
+    "format": "prettier --write app/",
+    "init:db": "npx sequelize db:migrate"
   },
   "repository": {
     "type": "git",
