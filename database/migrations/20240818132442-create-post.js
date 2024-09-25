@@ -44,7 +44,7 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       tel: {
-        type: STRING(20),
+        type:  Sequelize.STRING(20),
         allowNull: false
       },
       status: {

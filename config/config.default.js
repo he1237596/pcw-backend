@@ -102,6 +102,10 @@ module.exports = appInfo => {
     username: 'root',
     password: '12345678',
     database: 'pinchewang',
+    dialectOptions: {
+      allowPublicKeyRetrieval: true,
+      ssl: false
+    },
     define: {
       id: {
         type: DataTypes.UUID,
